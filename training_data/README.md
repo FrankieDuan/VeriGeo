@@ -7,7 +7,7 @@ training_data/
 └── README.md
 ```
 
-## 记录字段
+## Record Schema
 
 ```json
 {

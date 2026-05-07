@@ -2,9 +2,9 @@
 
 ```
 VeriGeo/
-├── code/             # 数据生成流水线
-├── training_data/    # 训练集
+├── code/             # data generation pipeline
+├── training_data/    # training set
 └── model_weights/    # LoRA adapter
 ```
 
-详见各子目录的 README。
+See each subdirectory's README for details.

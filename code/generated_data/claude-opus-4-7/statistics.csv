@@ -1,0 +1,11 @@
+model,domain,difficulty,total,direct_pass,accepted_after_repair,final_reject,avg_tokens,avg_time_sec,avg_cost_usd
+claude-opus,euclid,easy,0,0,0,0,0,0,0
+claude-opus,euclid,medium,0,0,0,0,0,0,0
+claude-opus,euclid,hard,0,0,0,0,0,0,0
+claude-opus,vector_coord,easy,1,0,1,0,17881.0,63.91,0.009715
+claude-opus,vector_coord,medium,0,0,0,0,0,0,0
+claude-opus,vector_coord,hard,0,0,0,0,0,0,0
+claude-opus,function_calculus,easy,0,0,0,0,0,0,0
+claude-opus,function_calculus,medium,0,0,0,0,0,0,0
+claude-opus,function_calculus,hard,0,0,0,0,0,0,0
+claude-opus,ALL,ALL,1,0,1,0,,,

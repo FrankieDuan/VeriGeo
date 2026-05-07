@@ -1,0 +1,489 @@
+{
+  "problem": {
+    "problem": "In triangle ABC, let M be the midpoint of side BC. A point N lies on segment AM such that vector AN = (2/3) vector AM. The point P is defined by the condition that N is the midpoint of segment AP. If A = (0,0), B = (6,2), and C = (4,8), find the coordinates of P.",
+    "givens": [
+      "A = (0,0), B = (6,2), C = (4,8)",
+      "M is the midpoint of segment BC",
+      "Vector AN = (2/3) * vector AM",
+      "N is the midpoint of segment AP"
+    ],
+    "goal": "Find the coordinates of point P.",
+    "answer": "(20/3, 20/3)",
+    "proof_outline": [
+      "By the midpoint formula applied with reference point A: vector AM = (1/2)(vector AB + vector AC).",
+      "Substituting: vector AB = (6,2), vector AC = (4,8), so vector AM = (1/2)((6,2)+(4,8)) = (1/2)(10,10) = (5,5).",
+      "Hence vector AN = (2/3) * (5,5) = (10/3, 10/3), so N = A + (10/3, 10/3) = (10/3, 10/3).",
+      "Since N is the midpoint of AP, by the equal-step midpoint condition vector AN = vector NP, so vector AP = 2 * vector AN = (20/3, 20/3).",
+      "Therefore P = A + (20/3, 20/3) = (20/3, 20/3)."
+    ],
+    "used_objects": [
+      "A",
+      "B",
+      "C",
+      "M",
+      "N",
+      "P",
+      "TRI_ABC",
+      "SEG_AB",
+      "SEG_AC",
+      "SEG_BC",
+      "SEG_AM",
+      "SEG_AN",
+      "SEG_NP"
+    ],
+    "meta": {
+      "problem_type": "numeric",
+      "reflection_modified": false,
+      "review_status": "skipped",
+      "review_needs_regeneration": false,
+      "review_issues_count": 0,
+      "author_generation": {
+        "reflection_rounds": 1,
+        "failed_attempts": 0,
+        "failed_steps": []
+      }
+    }
+  },
+  "author_preview_path": "/test/verigeo_clean/author_outputs/author_latest.png",
+  "author_review_state": {
+    "status": "skipped",
+    "review": null,
+    "error": null
+  },
+  "author": {
+    "strategy": "unified",
+    "combo": {
+      "actions": [
+        {
+          "op": "AddPoint",
+          "type": "Cartesian",
+          "args": [
+            "A",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "op": "AddPoint",
+          "type": "Cartesian",
+          "args": [
+            "B",
+            "6",
+            "2"
+          ]
+        },
+        {
+          "op": "AddPoint",
+          "type": "Cartesian",
+          "args": [
+            "C",
+            "4",
+            "8"
+          ]
+        },
+        {
+          "op": "AddTriangle",
+          "type": "Triangle",
+          "args": [
+            "TRI_ABC",
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "op": "AddAuxLine",
+          "type": "Segment",
+          "args": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "op": "AddAuxLine",
+          "type": "Segment",
+          "args": [
+            "B",
+            "C"
+          ]
+        },
+        {
+          "op": "AddAuxLine",
+          "type": "Segment",
+          "args": [
+            "A",
+            "C"
+          ]
+        },
+        {
+          "op": "AddPoint",
+          "type": "OnSegment",
+          "args": [
+            "M",
+            "SEG_BC",
+            "1/2"
+          ]
+        },
+        {
+          "op": "AddEdge",
+          "type": "Midpoint",
+          "args": [
+            "M",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "op": "AddAuxLine",
+          "type": "Segment",
+          "args": [
+            "A",
+            "M"
+          ]
+        },
+        {
+          "op": "AddPoint",
+          "type": "Cartesian",
+          "args": [
+            "N",
+            "10/3",
+            "10/3"
+          ]
+        },
+        {
+          "op": "AddEdge",
+          "type": "VectorLinear",
+          "args": [
+            "A",
+            "N",
+            "2/3",
+            "A",
+            "M"
+          ]
+        },
+        {
+          "op": "AddAuxLine",
+          "type": "Segment",
+          "args": [
+            "A",
+            "N"
+          ]
+        },
+        {
+          "op": "AddPoint",
+          "type": "Cartesian",
+          "args": [
+            "P",
+            "20/3",
+            "20/3"
+          ]
+        },
+        {
+          "op": "AddEdge",
+          "type": "VectorLinear",
+          "args": [
+            "A",
+            "P",
+            "2",
+            "A",
+            "N"
+          ]
+        },
+        {
+          "op": "AddAuxLine",
+          "type": "Segment",
+          "args": [
+            "N",
+            "P"
+          ]
+        }
+      ],
+      "comment": "Uses the midpoint-from-reference-point formula to compute AM, then equal-step midpoint to extend AN to AP. Easy vector coordinate computation.",
+      "logs": [
+        {
+          "step": 1,
+          "op": "AddPoint",
+          "type": "Cartesian",
+          "args": [
+            "A",
+            "0",
+            "0"
+          ],
+          "ok": true,
+          "msg": "Set point A = (0.000, 0.000)"
+        },
+        {
+          "step": 2,
+          "op": "AddPoint",
+          "type": "Cartesian",
+          "args": [
+            "B",
+            "6",
+            "2"
+          ],
+          "ok": true,
+          "msg": "Set point B = (6.000, 2.000)"
+        },
+        {
+          "step": 3,
+          "op": "AddPoint",
+          "type": "Cartesian",
+          "args": [
+            "C",
+            "4",
+            "8"
+          ],
+          "ok": true,
+          "msg": "Set point C = (4.000, 8.000)"
+        },
+        {
+          "step": 4,
+          "op": "AddTriangle",
+          "type": "Triangle",
+          "args": [
+            "TRI_ABC",
+            "A",
+            "B",
+            "C"
+          ],
+          "ok": true,
+          "msg": "Registered triangle TRI_ABC"
+        },
+        {
+          "step": 5,
+          "op": "AddAuxLine",
+          "type": "Segment",
+          "args": [
+            "A",
+            "B"
+          ],
+          "ok": true,
+          "msg": "Created/reused segment SEG_AB"
+        },
+        {
+          "step": 6,
+          "op": "AddAuxLine",
+          "type": "Segment",
+          "args": [
+            "B",
+            "C"
+          ],
+          "ok": true,
+          "msg": "Created/reused segment SEG_BC"
+        },
+        {
+          "step": 7,
+          "op": "AddAuxLine",
+          "type": "Segment",
+          "args": [
+            "A",
+            "C"
+          ],
+          "ok": true,
+          "msg": "Created/reused segment SEG_AC"
+        },
+        {
+          "step": 8,
+          "op": "AddPoint",
+          "type": "OnSegment",
+          "args": [
+            "M",
+            "SEG_BC",
+            "1/2"
+          ],
+          "ok": true,
+          "msg": "Placed point M on segment SEG_BC"
+        },
+        {
+          "step": 9,
+          "op": "AddEdge",
+          "type": "Midpoint",
+          "args": [
+            "M",
+            "B",
+            "C"
+          ],
+          "ok": true,
+          "msg": "Added constraint Midpoint"
+        },
+        {
+          "step": 10,
+          "op": "AddAuxLine",
+          "type": "Segment",
+          "args": [
+            "A",
+            "M"
+          ],
+          "ok": true,
+          "msg": "Created/reused segment SEG_AM"
+        },
+        {
+          "step": 11,
+          "op": "AddPoint",
+          "type": "Cartesian",
+          "args": [
+            "N",
+            "10/3",
+            "10/3"
+          ],
+          "ok": true,
+          "msg": "Set point N = (3.333, 3.333)"
+        },
+        {
+          "step": 12,
+          "op": "AddEdge",
+          "type": "VectorLinear",
+          "args": [
+            "A",
+            "N",
+            "2/3",
+            "A",
+            "M"
+          ],
+          "ok": true,
+          "msg": "Added constraint VectorLinear"
+        },
+        {
+          "step": 13,
+          "op": "AddAuxLine",
+          "type": "Segment",
+          "args": [
+            "A",
+            "N"
+          ],
+          "ok": true,
+          "msg": "Created/reused segment SEG_AN"
+        },
+        {
+          "step": 14,
+          "op": "AddPoint",
+          "type": "Cartesian",
+          "args": [
+            "P",
+            "20/3",
+            "20/3"
+          ],
+          "ok": true,
+          "msg": "Set point P = (6.667, 6.667)"
+        },
+        {
+          "step": 15,
+          "op": "AddEdge",
+          "type": "VectorLinear",
+          "args": [
+            "A",
+            "P",
+            "2",
+            "A",
+            "N"
+          ],
+          "ok": true,
+          "msg": "Added constraint VectorLinear"
+        },
+        {
+          "step": 16,
+          "op": "AddAuxLine",
+          "type": "Segment",
+          "args": [
+            "N",
+            "P"
+          ],
+          "ok": true,
+          "msg": "Created/reused segment SEG_NP"
+        },
+        {
+          "step": 17,
+          "op": "VeriSolve",
+          "type": "PostProcess",
+          "args": [],
+          "ok": true,
+          "msg": "Hard-constraint resolution complete: line/segment/circle intersections placed; order-independent"
+        },
+        {
+          "step": 18,
+          "op": "SnapFreeRays",
+          "type": "PostProcess",
+          "args": [],
+          "ok": true,
+          "msg": "Free-ray snap complete: snapped=0, hidden=0, total=0"
+        }
+      ],
+      "problem": {
+        "problem": "In triangle ABC, let M be the midpoint of side BC. A point N lies on segment AM such that vector AN = (2/3) vector AM. The point P is defined by the condition that N is the midpoint of segment AP. If A = (0,0), B = (6,2), and C = (4,8), find the coordinates of P.",
+        "givens": [
+          "A = (0,0), B = (6,2), C = (4,8)",
+          "M is the midpoint of segment BC",
+          "Vector AN = (2/3) * vector AM",
+          "N is the midpoint of segment AP"
+        ],
+        "goal": "Find the coordinates of point P.",
+        "answer": "(20/3, 20/3)",
+        "proof_outline": [
+          "By the midpoint formula applied with reference point A: vector AM = (1/2)(vector AB + vector AC).",
+          "Substituting: vector AB = (6,2), vector AC = (4,8), so vector AM = (1/2)((6,2)+(4,8)) = (1/2)(10,10) = (5,5).",
+          "Hence vector AN = (2/3) * (5,5) = (10/3, 10/3), so N = A + (10/3, 10/3) = (10/3, 10/3).",
+          "Since N is the midpoint of AP, by the equal-step midpoint condition vector AN = vector NP, so vector AP = 2 * vector AN = (20/3, 20/3).",
+          "Therefore P = A + (20/3, 20/3) = (20/3, 20/3)."
+        ],
+        "used_objects": [
+          "A",
+          "B",
+          "C",
+          "M",
+          "N",
+          "P",
+          "TRI_ABC",
+          "SEG_AB",
+          "SEG_AC",
+          "SEG_BC",
+          "SEG_AM",
+          "SEG_AN",
+          "SEG_NP"
+        ],
+        "meta": {
+          "problem_type": "numeric",
+          "reflection_modified": false,
+          "review_status": "skipped",
+          "review_needs_regeneration": false,
+          "review_issues_count": 0,
+          "author_generation": {
+            "reflection_rounds": 1,
+            "failed_attempts": 0,
+            "failed_steps": []
+          }
+        }
+      },
+      "blueprint": {
+        "id": "BP-6673",
+        "families": [
+          "vector_coord"
+        ],
+        "motifs": {
+          "vector_coord": [
+            "Midpoint from any reference point: if M is midpoint of AB, then for any point P, vector PM = (1/2)vector PA + (1/2)vector PB.",
+            "Equal-step midpoint: if vector PQ = vector QR, then Q is the midpoint of PR."
+          ]
+        }
+      }
+    },
+    "from_scratch": true,
+    "mode": "numeric"
+  },
+  "blueprint": {
+    "id": "BP-6673",
+    "families": [
+      "vector_coord"
+    ],
+    "motifs": {
+      "vector_coord": [
+        "Midpoint from any reference point: if M is midpoint of AB, then for any point P, vector PM = (1/2)vector PA + (1/2)vector PB.",
+        "Equal-step midpoint: if vector PQ = vector QR, then Q is the midpoint of PR."
+      ]
+    }
+  },
+  "author_stats": {
+    "reflection_rounds": 1,
+    "failed_attempts": 0,
+    "failed_steps": []
+  }
+}

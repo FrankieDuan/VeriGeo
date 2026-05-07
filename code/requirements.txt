@@ -1,0 +1,4 @@
+numpy>=1.23
+matplotlib>=3.6
+sympy>=1.11
+requests>=2.28

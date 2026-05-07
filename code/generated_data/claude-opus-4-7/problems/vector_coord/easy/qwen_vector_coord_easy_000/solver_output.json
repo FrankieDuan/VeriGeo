@@ -1,0 +1,1192 @@
+{
+  "proof": "∵ A=(0,0), B=(6,2), C=(4,8), and M is the midpoint of BC; ∴ M_x=(6+4)/2=5 and M_y=(2+8)/2=5, so M=(5,5). ∵ vector AN = (2/3) vector AM with A=(0,0); ∴ N_x=(2/3)·5=10/3 and N_y=(2/3)·5=10/3, so N=(10/3,10/3). ∵ N is the midpoint of AP, so P=2N−A; ∴ P_x=20/3 and P_y=20/3, so P=(20/3,20/3).",
+  "actions": [
+    {
+      "op": "AddAuxLine",
+      "type": "Segment",
+      "args": [
+        "A",
+        "P"
+      ]
+    },
+    {
+      "op": "AddEdge",
+      "type": "Midpoint",
+      "args": [
+        "M",
+        "SEG_BC"
+      ]
+    },
+    {
+      "op": "VerifyPoint",
+      "type": "Cartesian",
+      "args": [
+        "M",
+        "5",
+        "5",
+        "1e-4"
+      ]
+    },
+    {
+      "op": "AddEdge",
+      "type": "VectorLinear",
+      "args": [
+        "A",
+        "N",
+        "2/3",
+        "A",
+        "M"
+      ]
+    },
+    {
+      "op": "VerifyPoint",
+      "type": "Cartesian",
+      "args": [
+        "N",
+        "10/3",
+        "10/3",
+        "1e-4"
+      ]
+    },
+    {
+      "op": "AddEdge",
+      "type": "Midpoint",
+      "args": [
+        "N",
+        "SEG_AP"
+      ]
+    },
+    {
+      "op": "AddEdge",
+      "type": "ExprConstraint",
+      "args": [
+        "Length(SEG_AP)",
+        "=",
+        "2*Length(SEG_AN)"
+      ]
+    },
+    {
+      "op": "VerifyPoint",
+      "type": "Cartesian",
+      "args": [
+        "P",
+        "20/3",
+        "20/3",
+        "1e-4"
+      ]
+    }
+  ],
+  "final_answer": "(20/3, 20/3)",
+  "reflection_modified": false,
+  "execution_logs": [
+    {
+      "step": 1,
+      "op": "AddAuxLine",
+      "type": "Segment",
+      "args": [
+        "A",
+        "P"
+      ],
+      "ok": true,
+      "msg": "segment SEG_AP",
+      "geom_ok": null,
+      "verification": null
+    },
+    {
+      "step": 2,
+      "op": "AddEdge",
+      "type": "Midpoint",
+      "args": [
+        "M",
+        "SEG_BC"
+      ],
+      "ok": true,
+      "msg": "ok",
+      "geom_ok": true,
+      "verification": {
+        "MI_37d8cd": {
+          "ok": true,
+          "msg": "|MU-MV|=0.000e+00",
+          "type": "Midpoint",
+          "scope": [
+            "M",
+            "SEG_BC"
+          ],
+          "source": "proof"
+        }
+      }
+    },
+    {
+      "step": 3,
+      "op": "VerifyPoint",
+      "type": "Cartesian",
+      "args": [
+        "M",
+        "5",
+        "5",
+        "1e-4"
+      ],
+      "ok": true,
+      "msg": "verify M: dx=0, dy=0, tol=0.0001",
+      "geom_ok": true,
+      "verification": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "tol": 0.0001
+      }
+    },
+    {
+      "step": 4,
+      "op": "AddEdge",
+      "type": "VectorLinear",
+      "args": [
+        "A",
+        "N",
+        "2/3",
+        "A",
+        "M"
+      ],
+      "ok": true,
+      "msg": "ok",
+      "geom_ok": true,
+      "verification": {
+        "VE_3b2754": {
+          "ok": true,
+          "msg": "|Δv|=6.280e-16",
+          "type": "VectorLinear",
+          "scope": [
+            "A",
+            "N",
+            "2/3",
+            "A",
+            "M"
+          ],
+          "source": "proof"
+        },
+        "PA_71d863": {
+          "ok": true,
+          "msg": "∥ err=0.00e+00°",
+          "type": "Parallel",
+          "scope": [
+            "SEG_AN",
+            "SEG_AM"
+          ],
+          "source": "derived"
+        }
+      }
+    },
+    {
+      "step": 5,
+      "op": "VerifyPoint",
+      "type": "Cartesian",
+      "args": [
+        "N",
+        "10/3",
+        "10/3",
+        "1e-4"
+      ],
+      "ok": true,
+      "msg": "verify N: dx=0, dy=0, tol=0.0001",
+      "geom_ok": true,
+      "verification": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "tol": 0.0001
+      }
+    },
+    {
+      "step": 6,
+      "op": "AddEdge",
+      "type": "Midpoint",
+      "args": [
+        "N",
+        "SEG_AP"
+      ],
+      "ok": true,
+      "msg": "ok",
+      "geom_ok": true,
+      "verification": {
+        "MI_895cc1": {
+          "ok": true,
+          "msg": "|MU-MV|=0.000e+00",
+          "type": "Midpoint",
+          "scope": [
+            "N",
+            "SEG_AP"
+          ],
+          "source": "proof"
+        }
+      }
+    },
+    {
+      "step": 7,
+      "op": "AddEdge",
+      "type": "ExprConstraint",
+      "args": [
+        "Length(SEG_AP)",
+        "=",
+        "2*Length(SEG_AN)"
+      ],
+      "ok": true,
+      "msg": "expr",
+      "geom_ok": true,
+      "verification": {
+        "EX_e9d3db": {
+          "ok": true,
+          "msg": "9.42809 = 9.42809 (tol=9.43e-06)",
+          "type": "ExprConstraint",
+          "scope": [],
+          "source": "proof",
+          "expr": {
+            "lhs": 9.428090415820634,
+            "relation": "=",
+            "rhs": 9.428090415820634,
+            "diff": 0.0,
+            "tolerance": 9.428090415820634e-06
+          }
+        }
+      }
+    },
+    {
+      "step": 8,
+      "op": "VerifyPoint",
+      "type": "Cartesian",
+      "args": [
+        "P",
+        "20/3",
+        "20/3",
+        "1e-4"
+      ],
+      "ok": true,
+      "msg": "verify P: dx=0, dy=0, tol=0.0001",
+      "geom_ok": true,
+      "verification": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "tol": 0.0001
+      }
+    },
+    {
+      "step": 9,
+      "op": "VeriSolve",
+      "type": "Author",
+      "args": [],
+      "ok": true,
+      "msg": "VeriSolve_incidence (verify_only mode) complete",
+      "geom_ok": null,
+      "verification": null
+    },
+    {
+      "step": 10,
+      "op": "SnapFreeRays",
+      "type": "Author",
+      "args": [],
+      "ok": true,
+      "msg": "Free-ray snap complete: snapped=0, hidden=0, total=0",
+      "geom_ok": null,
+      "verification": null
+    }
+  ],
+  "_attempt_records": [
+    {
+      "status": "invalid_schema",
+      "errors": [
+        "actions[5].args contains invalid ID: SEG_AP"
+      ],
+      "raw": "{\"proof\": \"∵ A=(0,0), B=(6,2), C=(4,8); ∴ M is the midpoint of BC, so M=((6+4)/2,(2+8)/2)=(5,5). ∵ vector AN = (2/3) vector AM and A=(0,0); ∴ N = A + (2/3)(M-A) = (2/3)(5,5) = (10/3, 10/3). ∵ N is the midpoint of AP; ∴ P = 2N - A = (20/3, 20/3).\",\n\"actions\": [\n{\"op\": \"AddEdge\", \"type\": \"ExprConstraint\", \"args\": [\"Length(SEG_AB)\", \"=\", \"Sqrt(40)\"]},\n{\"op\": \"AddEdge\", \"type\": \"Midpoint\", \"args\": [\"M\", \"SEG_BC\"]},\n{\"op\": \"AddEdge\", \"type\": \"ExprConstraint\", \"args\": [\"M\", \"=\", \"(5,5)\"]},\n{\"op\": \"AddEdge\", \"type\": \"VectorLinear\", \"args\": [\"A\", \"N\", \"2/3\", \"A\", \"M\"]},\n{\"op\": \"AddEdge\", \"type\": \"ExprConstraint\", \"args\": [\"N\", \"=\", \"(10/3,10/3)\"]},\n{\"op\": \"AddEdge\", \"type\": \"Midpoint\", \"args\": [\"N\", \"SEG_AP\"]},\n{\"op\": \"AddEdge\", \"type\": \"ExprConstraint\", \"args\": [\"P\", \"=\", \"(20/3,20/3)\"]},\n{\"op\": \"VerifyPoint\", \"type\": \"Cartesian\", \"args\": [\"P\", \"20/3\", \"20/3\", \"1e-4\"]}\n],\n\"final_answer\": \"(20/3, 20/3)\"}"
+    },
+    {
+      "status": "invalid_schema",
+      "errors": [
+        "actions[0] new point P already exists"
+      ],
+      "raw": "{\"proof\": \"∵ A=(0,0), B=(6,2), C=(4,8), and M is the midpoint of BC; ∴ M=((6+4)/2,(2+8)/2)=(5,5). ∵ vector AN = (2/3) vector AM with A=(0,0); ∴ N = (2/3)·M = (10/3, 10/3). ∵ N is the midpoint of AP, so P = 2N − A; ∴ P = (20/3, 20/3).\",\n\"actions\": [\n{\"op\": \"AddPoint\", \"type\": \"Free\", \"args\": [\"P\"]},\n{\"op\": \"AddAuxLine\", \"type\": \"Segment\", \"args\": [\"A\", \"P\"]},\n{\"op\": \"AddEdge\", \"type\": \"Midpoint\", \"args\": [\"M\", \"SEG_BC\"]},\n{\"op\": \"AddEdge\", \"type\": \"ExprConstraint\", \"args\": [\"M\", \"=\", \"(5,5)\"]},\n{\"op\": \"AddEdge\", \"type\": \"VectorLinear\", \"args\": [\"A\", \"N\", \"2/3\", \"A\", \"M\"]},\n{\"op\": \"AddEdge\", \"type\": \"ExprConstraint\", \"args\": [\"N\", \"=\", \"(10/3,10/3)\"]},\n{\"op\": \"AddEdge\", \"type\": \"Midpoint\", \"args\": [\"N\", \"SEG_AP\"]},\n{\"op\": \"AddEdge\", \"type\": \"ExprConstraint\", \"args\": [\"P\", \"=\", \"(20/3,20/3)\"]},\n{\"op\": \"VerifyPoint\", \"type\": \"Cartesian\", \"args\": [\"P\", \"20/3\", \"20/3\", \"1e-4\"]}\n],\n\"final_answer\": \"(20/3, 20/3)\",\n\"reflection_modified\": true}"
+    },
+    {
+      "status": "numeric_fail",
+      "issues": [
+        "step 3: AddEdge/ExprConstraint numeric check did not pass",
+        "step 3: AddEdge/ExprConstraint validation EX_39b53e failed: expr-error: Expression result is not real: M",
+        "step 5: AddEdge/ExprConstraint numeric check did not pass",
+        "step 5: AddEdge/ExprConstraint validation EX_195e81 failed: expr-error: Expression result is not real: N",
+        "step 7: AddEdge/ExprConstraint numeric check did not pass",
+        "step 7: AddEdge/ExprConstraint validation EX_b8e0aa failed: expr-error: Expression result is not real: P"
+      ],
+      "obj": {
+        "proof": "∵ A=(0,0), B=(6,2), C=(4,8), and M is the midpoint of BC; ∴ M=((6+4)/2,(2+8)/2)=(5,5). ∵ vector AN = (2/3) vector AM with A=(0,0); ∴ N = (2/3)·M = (10/3, 10/3). ∵ N is the midpoint of AP, so P = 2N − A; ∴ P = (20/3, 20/3).",
+        "actions": [
+          {
+            "op": "AddAuxLine",
+            "type": "Segment",
+            "args": [
+              "A",
+              "P"
+            ]
+          },
+          {
+            "op": "AddEdge",
+            "type": "Midpoint",
+            "args": [
+              "M",
+              "SEG_BC"
+            ]
+          },
+          {
+            "op": "AddEdge",
+            "type": "ExprConstraint",
+            "args": [
+              "M",
+              "=",
+              "(5,5)"
+            ]
+          },
+          {
+            "op": "AddEdge",
+            "type": "VectorLinear",
+            "args": [
+              "A",
+              "N",
+              "2/3",
+              "A",
+              "M"
+            ]
+          },
+          {
+            "op": "AddEdge",
+            "type": "ExprConstraint",
+            "args": [
+              "N",
+              "=",
+              "(10/3,10/3)"
+            ]
+          },
+          {
+            "op": "AddEdge",
+            "type": "Midpoint",
+            "args": [
+              "N",
+              "SEG_AP"
+            ]
+          },
+          {
+            "op": "AddEdge",
+            "type": "ExprConstraint",
+            "args": [
+              "P",
+              "=",
+              "(20/3,20/3)"
+            ]
+          },
+          {
+            "op": "VerifyPoint",
+            "type": "Cartesian",
+            "args": [
+              "P",
+              "20/3",
+              "20/3",
+              "1e-4"
+            ]
+          }
+        ],
+        "final_answer": "(20/3, 20/3)",
+        "reflection_modified": true
+      },
+      "logs": [
+        {
+          "step": 1,
+          "op": "AddAuxLine",
+          "type": "Segment",
+          "args": [
+            "A",
+            "P"
+          ],
+          "ok": true,
+          "msg": "segment SEG_AP",
+          "geom_ok": null,
+          "verification": null
+        },
+        {
+          "step": 2,
+          "op": "AddEdge",
+          "type": "Midpoint",
+          "args": [
+            "M",
+            "SEG_BC"
+          ],
+          "ok": true,
+          "msg": "ok",
+          "geom_ok": true,
+          "verification": {
+            "MI_55cd57": {
+              "ok": true,
+              "msg": "|MU-MV|=0.000e+00",
+              "type": "Midpoint",
+              "scope": [
+                "M",
+                "SEG_BC"
+              ],
+              "source": "proof"
+            }
+          }
+        },
+        {
+          "step": 3,
+          "op": "AddEdge",
+          "type": "ExprConstraint",
+          "args": [
+            "M",
+            "=",
+            "(5,5)"
+          ],
+          "ok": true,
+          "msg": "expr (numeric verification did not pass)",
+          "geom_ok": false,
+          "verification": {
+            "EX_39b53e": {
+              "ok": false,
+              "msg": "expr-error: Expression result is not real: M",
+              "type": "ExprConstraint",
+              "scope": [],
+              "source": "proof"
+            }
+          }
+        },
+        {
+          "step": 4,
+          "op": "AddEdge",
+          "type": "VectorLinear",
+          "args": [
+            "A",
+            "N",
+            "2/3",
+            "A",
+            "M"
+          ],
+          "ok": true,
+          "msg": "ok",
+          "geom_ok": true,
+          "verification": {
+            "VE_869044": {
+              "ok": true,
+              "msg": "|Δv|=6.280e-16",
+              "type": "VectorLinear",
+              "scope": [
+                "A",
+                "N",
+                "2/3",
+                "A",
+                "M"
+              ],
+              "source": "proof"
+            },
+            "PA_f594f9": {
+              "ok": true,
+              "msg": "∥ err=0.00e+00°",
+              "type": "Parallel",
+              "scope": [
+                "SEG_AN",
+                "SEG_AM"
+              ],
+              "source": "derived"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "op": "AddEdge",
+          "type": "ExprConstraint",
+          "args": [
+            "N",
+            "=",
+            "(10/3,10/3)"
+          ],
+          "ok": true,
+          "msg": "expr (numeric verification did not pass)",
+          "geom_ok": false,
+          "verification": {
+            "EX_195e81": {
+              "ok": false,
+              "msg": "expr-error: Expression result is not real: N",
+              "type": "ExprConstraint",
+              "scope": [],
+              "source": "proof"
+            }
+          }
+        },
+        {
+          "step": 6,
+          "op": "AddEdge",
+          "type": "Midpoint",
+          "args": [
+            "N",
+            "SEG_AP"
+          ],
+          "ok": true,
+          "msg": "ok",
+          "geom_ok": true,
+          "verification": {
+            "MI_55d26f": {
+              "ok": true,
+              "msg": "|MU-MV|=0.000e+00",
+              "type": "Midpoint",
+              "scope": [
+                "N",
+                "SEG_AP"
+              ],
+              "source": "proof"
+            }
+          }
+        },
+        {
+          "step": 7,
+          "op": "AddEdge",
+          "type": "ExprConstraint",
+          "args": [
+            "P",
+            "=",
+            "(20/3,20/3)"
+          ],
+          "ok": true,
+          "msg": "expr (numeric verification did not pass)",
+          "geom_ok": false,
+          "verification": {
+            "EX_b8e0aa": {
+              "ok": false,
+              "msg": "expr-error: Expression result is not real: P",
+              "type": "ExprConstraint",
+              "scope": [],
+              "source": "proof"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "op": "VerifyPoint",
+          "type": "Cartesian",
+          "args": [
+            "P",
+            "20/3",
+            "20/3",
+            "1e-4"
+          ],
+          "ok": true,
+          "msg": "verify P: dx=0, dy=0, tol=0.0001",
+          "geom_ok": true,
+          "verification": {
+            "dx": 0.0,
+            "dy": 0.0,
+            "tol": 0.0001
+          }
+        },
+        {
+          "step": 9,
+          "op": "VeriSolve",
+          "type": "Author",
+          "args": [],
+          "ok": true,
+          "msg": "?????????/??/???????????",
+          "geom_ok": null,
+          "verification": null
+        },
+        {
+          "step": 10,
+          "op": "SnapFreeRays",
+          "type": "Author",
+          "args": [],
+          "ok": true,
+          "msg": "Free-ray snap complete: snapped=0, hidden=0, total=0",
+          "geom_ok": null,
+          "verification": null
+        }
+      ]
+    },
+    {
+      "status": "ok",
+      "issues": [],
+      "obj": {
+        "proof": "∵ A=(0,0), B=(6,2), C=(4,8), and M is the midpoint of BC; ∴ M_x=(6+4)/2=5 and M_y=(2+8)/2=5, so M=(5,5). ∵ vector AN = (2/3) vector AM with A=(0,0); ∴ N_x=(2/3)·5=10/3 and N_y=(2/3)·5=10/3, so N=(10/3,10/3). ∵ N is the midpoint of AP, so P=2N−A; ∴ P_x=20/3 and P_y=20/3, so P=(20/3,20/3).",
+        "actions": [
+          {
+            "op": "AddAuxLine",
+            "type": "Segment",
+            "args": [
+              "A",
+              "P"
+            ]
+          },
+          {
+            "op": "AddEdge",
+            "type": "Midpoint",
+            "args": [
+              "M",
+              "SEG_BC"
+            ]
+          },
+          {
+            "op": "VerifyPoint",
+            "type": "Cartesian",
+            "args": [
+              "M",
+              "5",
+              "5",
+              "1e-4"
+            ]
+          },
+          {
+            "op": "AddEdge",
+            "type": "VectorLinear",
+            "args": [
+              "A",
+              "N",
+              "2/3",
+              "A",
+              "M"
+            ]
+          },
+          {
+            "op": "VerifyPoint",
+            "type": "Cartesian",
+            "args": [
+              "N",
+              "10/3",
+              "10/3",
+              "1e-4"
+            ]
+          },
+          {
+            "op": "AddEdge",
+            "type": "Midpoint",
+            "args": [
+              "N",
+              "SEG_AP"
+            ]
+          },
+          {
+            "op": "AddEdge",
+            "type": "ExprConstraint",
+            "args": [
+              "Length(SEG_AP)",
+              "=",
+              "2*Length(SEG_AN)"
+            ]
+          },
+          {
+            "op": "VerifyPoint",
+            "type": "Cartesian",
+            "args": [
+              "P",
+              "20/3",
+              "20/3",
+              "1e-4"
+            ]
+          }
+        ],
+        "final_answer": "(20/3, 20/3)",
+        "reflection_modified": true
+      },
+      "logs": [
+        {
+          "step": 1,
+          "op": "AddAuxLine",
+          "type": "Segment",
+          "args": [
+            "A",
+            "P"
+          ],
+          "ok": true,
+          "msg": "segment SEG_AP",
+          "geom_ok": null,
+          "verification": null
+        },
+        {
+          "step": 2,
+          "op": "AddEdge",
+          "type": "Midpoint",
+          "args": [
+            "M",
+            "SEG_BC"
+          ],
+          "ok": true,
+          "msg": "ok",
+          "geom_ok": true,
+          "verification": {
+            "MI_98ee90": {
+              "ok": true,
+              "msg": "|MU-MV|=0.000e+00",
+              "type": "Midpoint",
+              "scope": [
+                "M",
+                "SEG_BC"
+              ],
+              "source": "proof"
+            }
+          }
+        },
+        {
+          "step": 3,
+          "op": "VerifyPoint",
+          "type": "Cartesian",
+          "args": [
+            "M",
+            "5",
+            "5",
+            "1e-4"
+          ],
+          "ok": true,
+          "msg": "verify M: dx=0, dy=0, tol=0.0001",
+          "geom_ok": true,
+          "verification": {
+            "dx": 0.0,
+            "dy": 0.0,
+            "tol": 0.0001
+          }
+        },
+        {
+          "step": 4,
+          "op": "AddEdge",
+          "type": "VectorLinear",
+          "args": [
+            "A",
+            "N",
+            "2/3",
+            "A",
+            "M"
+          ],
+          "ok": true,
+          "msg": "ok",
+          "geom_ok": true,
+          "verification": {
+            "VE_2cfbda": {
+              "ok": true,
+              "msg": "|Δv|=6.280e-16",
+              "type": "VectorLinear",
+              "scope": [
+                "A",
+                "N",
+                "2/3",
+                "A",
+                "M"
+              ],
+              "source": "proof"
+            },
+            "PA_fa6abf": {
+              "ok": true,
+              "msg": "∥ err=0.00e+00°",
+              "type": "Parallel",
+              "scope": [
+                "SEG_AN",
+                "SEG_AM"
+              ],
+              "source": "derived"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "op": "VerifyPoint",
+          "type": "Cartesian",
+          "args": [
+            "N",
+            "10/3",
+            "10/3",
+            "1e-4"
+          ],
+          "ok": true,
+          "msg": "verify N: dx=0, dy=0, tol=0.0001",
+          "geom_ok": true,
+          "verification": {
+            "dx": 0.0,
+            "dy": 0.0,
+            "tol": 0.0001
+          }
+        },
+        {
+          "step": 6,
+          "op": "AddEdge",
+          "type": "Midpoint",
+          "args": [
+            "N",
+            "SEG_AP"
+          ],
+          "ok": true,
+          "msg": "ok",
+          "geom_ok": true,
+          "verification": {
+            "MI_b941f1": {
+              "ok": true,
+              "msg": "|MU-MV|=0.000e+00",
+              "type": "Midpoint",
+              "scope": [
+                "N",
+                "SEG_AP"
+              ],
+              "source": "proof"
+            }
+          }
+        },
+        {
+          "step": 7,
+          "op": "AddEdge",
+          "type": "ExprConstraint",
+          "args": [
+            "Length(SEG_AP)",
+            "=",
+            "2*Length(SEG_AN)"
+          ],
+          "ok": true,
+          "msg": "expr",
+          "geom_ok": true,
+          "verification": {
+            "EX_6eda49": {
+              "ok": true,
+              "msg": "9.42809 = 9.42809 (tol=9.43e-06)",
+              "type": "ExprConstraint",
+              "scope": [],
+              "source": "proof",
+              "expr": {
+                "lhs": 9.428090415820634,
+                "relation": "=",
+                "rhs": 9.428090415820634,
+                "diff": 0.0,
+                "tolerance": 9.428090415820634e-06
+              }
+            }
+          }
+        },
+        {
+          "step": 8,
+          "op": "VerifyPoint",
+          "type": "Cartesian",
+          "args": [
+            "P",
+            "20/3",
+            "20/3",
+            "1e-4"
+          ],
+          "ok": true,
+          "msg": "verify P: dx=0, dy=0, tol=0.0001",
+          "geom_ok": true,
+          "verification": {
+            "dx": 0.0,
+            "dy": 0.0,
+            "tol": 0.0001
+          }
+        },
+        {
+          "step": 9,
+          "op": "VeriSolve",
+          "type": "Author",
+          "args": [],
+          "ok": true,
+          "msg": "?????????/??/???????????",
+          "geom_ok": null,
+          "verification": null
+        },
+        {
+          "step": 10,
+          "op": "SnapFreeRays",
+          "type": "Author",
+          "args": [],
+          "ok": true,
+          "msg": "Free-ray snap complete: snapped=0, hidden=0, total=0",
+          "geom_ok": null,
+          "verification": null
+        }
+      ]
+    },
+    {
+      "status": "ok",
+      "issues": [],
+      "obj": {
+        "proof": "∵ A=(0,0), B=(6,2), C=(4,8), and M is the midpoint of BC; ∴ M_x=(6+4)/2=5 and M_y=(2+8)/2=5, so M=(5,5). ∵ vector AN = (2/3) vector AM with A=(0,0); ∴ N_x=(2/3)·5=10/3 and N_y=(2/3)·5=10/3, so N=(10/3,10/3). ∵ N is the midpoint of AP, so P=2N−A; ∴ P_x=20/3 and P_y=20/3, so P=(20/3,20/3).",
+        "actions": [
+          {
+            "op": "AddAuxLine",
+            "type": "Segment",
+            "args": [
+              "A",
+              "P"
+            ]
+          },
+          {
+            "op": "AddEdge",
+            "type": "Midpoint",
+            "args": [
+              "M",
+              "SEG_BC"
+            ]
+          },
+          {
+            "op": "VerifyPoint",
+            "type": "Cartesian",
+            "args": [
+              "M",
+              "5",
+              "5",
+              "1e-4"
+            ]
+          },
+          {
+            "op": "AddEdge",
+            "type": "VectorLinear",
+            "args": [
+              "A",
+              "N",
+              "2/3",
+              "A",
+              "M"
+            ]
+          },
+          {
+            "op": "VerifyPoint",
+            "type": "Cartesian",
+            "args": [
+              "N",
+              "10/3",
+              "10/3",
+              "1e-4"
+            ]
+          },
+          {
+            "op": "AddEdge",
+            "type": "Midpoint",
+            "args": [
+              "N",
+              "SEG_AP"
+            ]
+          },
+          {
+            "op": "AddEdge",
+            "type": "ExprConstraint",
+            "args": [
+              "Length(SEG_AP)",
+              "=",
+              "2*Length(SEG_AN)"
+            ]
+          },
+          {
+            "op": "VerifyPoint",
+            "type": "Cartesian",
+            "args": [
+              "P",
+              "20/3",
+              "20/3",
+              "1e-4"
+            ]
+          }
+        ],
+        "final_answer": "(20/3, 20/3)",
+        "reflection_modified": false
+      },
+      "logs": [
+        {
+          "step": 1,
+          "op": "AddAuxLine",
+          "type": "Segment",
+          "args": [
+            "A",
+            "P"
+          ],
+          "ok": true,
+          "msg": "segment SEG_AP",
+          "geom_ok": null,
+          "verification": null
+        },
+        {
+          "step": 2,
+          "op": "AddEdge",
+          "type": "Midpoint",
+          "args": [
+            "M",
+            "SEG_BC"
+          ],
+          "ok": true,
+          "msg": "ok",
+          "geom_ok": true,
+          "verification": {
+            "MI_fe8baa": {
+              "ok": true,
+              "msg": "|MU-MV|=0.000e+00",
+              "type": "Midpoint",
+              "scope": [
+                "M",
+                "SEG_BC"
+              ],
+              "source": "proof"
+            }
+          }
+        },
+        {
+          "step": 3,
+          "op": "VerifyPoint",
+          "type": "Cartesian",
+          "args": [
+            "M",
+            "5",
+            "5",
+            "1e-4"
+          ],
+          "ok": true,
+          "msg": "verify M: dx=0, dy=0, tol=0.0001",
+          "geom_ok": true,
+          "verification": {
+            "dx": 0.0,
+            "dy": 0.0,
+            "tol": 0.0001
+          }
+        },
+        {
+          "step": 4,
+          "op": "AddEdge",
+          "type": "VectorLinear",
+          "args": [
+            "A",
+            "N",
+            "2/3",
+            "A",
+            "M"
+          ],
+          "ok": true,
+          "msg": "ok",
+          "geom_ok": true,
+          "verification": {
+            "VE_4f9617": {
+              "ok": true,
+              "msg": "|Δv|=6.280e-16",
+              "type": "VectorLinear",
+              "scope": [
+                "A",
+                "N",
+                "2/3",
+                "A",
+                "M"
+              ],
+              "source": "proof"
+            },
+            "PA_cda9a3": {
+              "ok": true,
+              "msg": "∥ err=0.00e+00°",
+              "type": "Parallel",
+              "scope": [
+                "SEG_AN",
+                "SEG_AM"
+              ],
+              "source": "derived"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "op": "VerifyPoint",
+          "type": "Cartesian",
+          "args": [
+            "N",
+            "10/3",
+            "10/3",
+            "1e-4"
+          ],
+          "ok": true,
+          "msg": "verify N: dx=0, dy=0, tol=0.0001",
+          "geom_ok": true,
+          "verification": {
+            "dx": 0.0,
+            "dy": 0.0,
+            "tol": 0.0001
+          }
+        },
+        {
+          "step": 6,
+          "op": "AddEdge",
+          "type": "Midpoint",
+          "args": [
+            "N",
+            "SEG_AP"
+          ],
+          "ok": true,
+          "msg": "ok",
+          "geom_ok": true,
+          "verification": {
+            "MI_db2b17": {
+              "ok": true,
+              "msg": "|MU-MV|=0.000e+00",
+              "type": "Midpoint",
+              "scope": [
+                "N",
+                "SEG_AP"
+              ],
+              "source": "proof"
+            }
+          }
+        },
+        {
+          "step": 7,
+          "op": "AddEdge",
+          "type": "ExprConstraint",
+          "args": [
+            "Length(SEG_AP)",
+            "=",
+            "2*Length(SEG_AN)"
+          ],
+          "ok": true,
+          "msg": "expr",
+          "geom_ok": true,
+          "verification": {
+            "EX_f577e8": {
+              "ok": true,
+              "msg": "9.42809 = 9.42809 (tol=9.43e-06)",
+              "type": "ExprConstraint",
+              "scope": [],
+              "source": "proof",
+              "expr": {
+                "lhs": 9.428090415820634,
+                "relation": "=",
+                "rhs": 9.428090415820634,
+                "diff": 0.0,
+                "tolerance": 9.428090415820634e-06
+              }
+            }
+          }
+        },
+        {
+          "step": 8,
+          "op": "VerifyPoint",
+          "type": "Cartesian",
+          "args": [
+            "P",
+            "20/3",
+            "20/3",
+            "1e-4"
+          ],
+          "ok": true,
+          "msg": "verify P: dx=0, dy=0, tol=0.0001",
+          "geom_ok": true,
+          "verification": {
+            "dx": 0.0,
+            "dy": 0.0,
+            "tol": 0.0001
+          }
+        },
+        {
+          "step": 9,
+          "op": "VeriSolve",
+          "type": "Author",
+          "args": [],
+          "ok": true,
+          "msg": "?????????/??/???????????",
+          "geom_ok": null,
+          "verification": null
+        },
+        {
+          "step": 10,
+          "op": "SnapFreeRays",
+          "type": "Author",
+          "args": [],
+          "ok": true,
+          "msg": "Free-ray snap complete: snapped=0, hidden=0, total=0",
+          "geom_ok": null,
+          "verification": null
+        }
+      ]
+    }
+  ]
+}

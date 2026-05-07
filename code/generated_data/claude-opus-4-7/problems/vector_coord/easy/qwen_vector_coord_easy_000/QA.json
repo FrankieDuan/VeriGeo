@@ -1,0 +1,4 @@
+{
+  "problem": "In triangle ABC, let M be the midpoint of side BC. A point N lies on segment AM such that vector AN = (2/3) vector AM. The point P is defined by the condition that N is the midpoint of segment AP. If A = (0,0), B = (6,2), and C = (4,8), find the coordinates of P.",
+  "proof": "∵ A=(0,0), B=(6,2), C=(4,8), and M is the midpoint of BC; ∴ M_x=(6+4)/2=5 and M_y=(2+8)/2=5, so M=(5,5). ∵ vector AN = (2/3) vector AM with A=(0,0); ∴ N_x=(2/3)·5=10/3 and N_y=(2/3)·5=10/3, so N=(10/3,10/3). ∵ N is the midpoint of AP, so P=2N−A; ∴ P_x=20/3 and P_y=20/3, so P=(20/3,20/3)."
+}

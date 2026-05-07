@@ -1,0 +1,32 @@
+{
+  "models": [
+    {
+      "name": "claude-opus",
+      "endpoint": "<REDACTED>",
+      "model": "claude-opus-4-7",
+      "api_key": "<REDACTED>",
+      "max_tokens": 60000,
+      "temperature": 1.0,
+      "timeout_secs": 1000,
+      "cost_per_1m_input": 0.104,
+      "cost_per_1m_output": 0.624,
+      "cost_per_1m_cache_read": 0.026
+    }
+  ],
+  "domains": [
+    "euclid",
+    "vector_coord",
+    "function_calculus"
+  ],
+  "difficulties": [
+    "easy",
+    "medium",
+    "hard"
+  ],
+  "attempts_per_cell": 1,
+  "max_workers": 1,
+  "base_seed": 20260420,
+  "started_at": "2026-05-07 05:56:20",
+  "started_at_utc": "2026-05-07 05:56:20 UTC",
+  "finished_at_utc": "2026-05-07 05:57:25 UTC"
+}

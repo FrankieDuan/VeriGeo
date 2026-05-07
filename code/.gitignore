@@ -1,0 +1,14 @@
+.env
+__pycache__/
+*.pyc
+.llm_cache/
+*.egg-info/
+.DS_Store
+
+# Generation outputs (regenerated per run; sample kept under generated_data/<sample>/ explicitly)
+euclid_easy/
+euclid_medium/
+euclid_hard/
+vector_coord_*/
+function_calculus_*/
+generation_results/

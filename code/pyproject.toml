@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "verigeo"
+version = "0.1.0"
+description = "Geometry-problem data generation system with author/solver/verifier LLM pipeline."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Anonymous" }]
+dependencies = [
+    "numpy>=1.23",
+    "matplotlib>=3.6",
+    "sympy>=1.11",
+    "requests>=2.28",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["verigeo*", "generate*"]

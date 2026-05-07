@@ -1,0 +1,45 @@
+{
+  "problem": "In triangle ABC, let M be the midpoint of side BC. A point N lies on segment AM such that vector AN = (2/3) vector AM. The point P is defined by the condition that N is the midpoint of segment AP. If A = (0,0), B = (6,2), and C = (4,8), find the coordinates of P.",
+  "givens": [
+    "A = (0,0), B = (6,2), C = (4,8)",
+    "M is the midpoint of segment BC",
+    "Vector AN = (2/3) * vector AM",
+    "N is the midpoint of segment AP"
+  ],
+  "goal": "Find the coordinates of point P.",
+  "answer": "(20/3, 20/3)",
+  "proof_outline": [
+    "By the midpoint formula applied with reference point A: vector AM = (1/2)(vector AB + vector AC).",
+    "Substituting: vector AB = (6,2), vector AC = (4,8), so vector AM = (1/2)((6,2)+(4,8)) = (1/2)(10,10) = (5,5).",
+    "Hence vector AN = (2/3) * (5,5) = (10/3, 10/3), so N = A + (10/3, 10/3) = (10/3, 10/3).",
+    "Since N is the midpoint of AP, by the equal-step midpoint condition vector AN = vector NP, so vector AP = 2 * vector AN = (20/3, 20/3).",
+    "Therefore P = A + (20/3, 20/3) = (20/3, 20/3)."
+  ],
+  "used_objects": [
+    "A",
+    "B",
+    "C",
+    "M",
+    "N",
+    "P",
+    "TRI_ABC",
+    "SEG_AB",
+    "SEG_AC",
+    "SEG_BC",
+    "SEG_AM",
+    "SEG_AN",
+    "SEG_NP"
+  ],
+  "meta": {
+    "problem_type": "numeric",
+    "reflection_modified": false,
+    "review_status": "skipped",
+    "review_needs_regeneration": false,
+    "review_issues_count": 0,
+    "author_generation": {
+      "reflection_rounds": 1,
+      "failed_attempts": 0,
+      "failed_steps": []
+    }
+  }
+}
